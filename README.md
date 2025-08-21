@@ -1,2 +1,5 @@
-# Feugo-Bot-Revamped-Version-
-A music bot made with js using the shokaku player
+# Nex-Bot-Src
+LEAKED BY ANKUSH
+# SUPPORT SERVER 
+SERVER LINK : https://discord.gg/hBvdRJgXzM
+# BIG SKIDDER = RITIK LODU
