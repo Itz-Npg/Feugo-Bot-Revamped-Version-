@@ -111,6 +111,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ---
 
-## As this bot is discontinued you can use but make sure to give credit to Kyxen and Zyren bot team if found using without credit legal action will be taken
+## As this bot is discontinued you can use but make sure to give credit to Painfuego and  1 team if found using without credit legal action will be taken
 
-Thank you for using Zyren Bot!
+Thank you for using Fuego Bot!
