@@ -1,14 +1,14 @@
 # @format
 
 BOT:
-  OWNERS: ["1212431696381612132","940959891005243442"]
-  ADMINS: ["1212431696381612132","940959891005243442"]
+  OWNERS: ["ID","ID"]
+  ADMINS: ["ID","ID"]
 
 
 
 LINKS:
-  SUPPORT: "https://discord.gg/nexhq"
-  MONGO_URI: "mongodb+srv://agrawalritik:Agrawalritik@cluster0.282ny.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/"
+  SUPPORT: "SUPPORT SERVER"
+  MONGO_URI: "MONGO URL"
   VOTING: "https://top.gg/bot/1272058924547178581"
 
 SPOTIFY:
