@@ -61,24 +61,24 @@ NEX:
   VOTEURI: "https://top.gg/bot/1272058924547178581/vote"
   TOPGGAUTH: ""
 
-# JINGLE:
-#   PREFIX: "?"
-#   EMOJIS: "black"
-#   COLOR: "#555555"
-#   SHARDS: "auto"
-#   PER_CLUSTER: 2
-#   TOKEN: ""
-#   TOPGGAUTH: ""
-#   VOTEURI: ""
-  
-# KYOKO:
-#   PREFIX: "&"
-#   EMOJIS: "black"
-#   COLOR: "#548fc1"
-#   SHARDS: "auto"
-#   PER_CLUSTER: 2
-#   TOKEN: ""
-#   TOPGGAUTH: ""
+JINGLE:
+   PREFIX: "?"
+   EMOJIS: "black"
+   COLOR: "#555555"
+   SHARDS: "auto"
+   PER_CLUSTER: 2
+   TOKEN: ""
+   TOPGGAUTH: ""
+   VOTEURI: ""
+
+KYOKO:
+   PREFIX: "&"
+   EMOJIS: "black"
+   COLOR: "#548fc1"
+   SHARDS: "auto"
+   PER_CLUSTER: 2
+   TOKEN: ""
+   TOPGGAUTH: ""
 
 WEBHOOKS:
   ERROR: "https://discord.com/api/webhooks/1286695127150104696/vPTOuOfNRlMiauDY7duWFo0o1JeXeVsRWVw13pbjRes74bIxAgZSyCAqDG_-tn21CW9s"
