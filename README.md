@@ -1,4 +1,4 @@
-# Zyren Bot Setup Guide
+# Feugo Bot Setup Guide
 
 ## Prerequisites
 
@@ -93,8 +93,8 @@ WEBHOOKS:
 1. **Start the bot:**
 
    ```sh
-   node src/shard.js
-   ```
+   node launcher.js
+     ```
 
 2. **Verify the bot is running:**
 
