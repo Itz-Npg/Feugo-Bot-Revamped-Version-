@@ -41,8 +41,8 @@ module.exports = player = (client) => {
     [
       {
         name: "Doubiest <3j",
-        url: "in-01.glaxin.dev:8102",
-        auth: "rihanop",
+        url: "Your Lavalink",
+        auth: "Lavalink pass",
         secure: false,
       },
     ],
