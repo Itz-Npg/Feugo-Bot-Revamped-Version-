@@ -26,17 +26,23 @@ module.exports = {
     )
       return;
 
+    // Fallback arrays to prevent crashes
+    client.owners = client.owners || [];
+    client.admins = client.admins || [];
+    client.moderators = client.moderators || [];
+    client.staff = client.staff || [];
+
     let [pfxu, pfxg, ignoredChnl, blacklistUser, owner, admin, moderator, team] =
       await Promise.all([
-        await client.db.pfx.get(`${client.user.id}_${message.author.id}`),
-        await client.db.pfx.get(`${client.user.id}_${message.guild.id}`),
+        client.db.pfx.get(`${client.user.id}_${message.author.id}`),
+        client.db.pfx.get(`${client.user.id}_${message.guild.id}`),
         (await client.db.ignore.get(`${client.user.id}_${message.guild.id}`)) ||
           [],
-        await client.db.blacklist.get(`${client.user.id}_${message.author.id}`),
-        await client.owners.find((x) => x === message.author.id),
-        await client.admins.find((x) => x === message.author.id),
-        await client.moderators.find((x) => x === message.author.id),
-        await client.staff.find((x) => x === message.author.id),
+        client.db.blacklist.get(`${client.user.id}_${message.author.id}`),
+        client.owners.find((x) => x === message.author.id),
+        client.admins.find((x) => x === message.author.id),
+        client.moderators.find((x) => x === message.author.id),
+        client.staff.find((x) => x === message.author.id),
       ]);
 
     if (owner || admin) blacklistUser = false;
@@ -44,7 +50,7 @@ module.exports = {
     if (blacklistUser == "warned") return;
 
     let [premiumGuild, premiumUser] = await require(
-      `@functions/msgCrt/checkPremium.js`,
+      `@functions/msgCrt/checkPremium.js`
     )(message);
 
     if (message.content.toLowerCase().includes(`jsk`)) {
@@ -57,12 +63,12 @@ module.exports = {
       if (blacklistUser)
         return await client.emit("blUser", message, blacklistUser);
       const mentionRlBucket = spamRateLimitManager.acquire(
-        `${message.author.id}`,
+        `${message.author.id}`
       );
       if (mentionRlBucket.limited && !owner && !admin)
         return client.db.blacklist.set(
           `${client.user.id}_${message.author.id}`,
-          true,
+          true
         );
       try {
         mentionRlBucket.consume();
@@ -88,11 +94,11 @@ module.exports = {
         ? [prefix, pfxu, pfxg]
         : [prefix, pfxu]
       : pfxg
-        ? [prefix, pfxg]
-        : [prefix];
+      ? [prefix, pfxg]
+      : [prefix];
     const prefixRegex = new RegExp(
       `^(<@!?${client.user.id}>|${prefixes.map(escapeRegex).join("|")})\\s*`,
-      "i",
+      "i"
     );
     if (!prefixRegex.test(message.content.toLowerCase())) return;
     const [matchedPrefix] = message.content.toLowerCase().match(prefixRegex);
@@ -102,7 +108,7 @@ module.exports = {
     const command =
       client.commands.get(commandName) ||
       client.commands.find(
-        (cmd) => cmd.aliases && cmd.aliases.includes(commandName),
+        (cmd) => cmd.aliases && cmd.aliases.includes(commandName)
       );
 
     if (!command) return;
@@ -115,7 +121,7 @@ module.exports = {
       await require(`@functions/msgCrt/ignored.js`)(
         message,
         command,
-        ignoreWarnRateLimitManager,
+        ignoreWarnRateLimitManager
       );
       return;
     }
@@ -127,7 +133,7 @@ module.exports = {
         spamRateLimitManager,
         cooldownRateLimitManager,
         owner,
-        admin,
+        admin
       ))
     )
       return;
@@ -143,7 +149,7 @@ module.exports = {
         return await message.reply({
           embeds: [
             new client.embed().desc(
-              `${client.emoji.admin} **Only my Owner/s and Admin/s can use this command**`,
+              `${client.emoji.admin} **Only my Owner/s and Admin/s can use this command**`
             ),
           ],
         });
@@ -154,7 +160,7 @@ module.exports = {
         return await message.reply({
           embeds: [
             new client.embed().desc(
-              `${client.emoji.king} **Only my Owner/s can use this command**`,
+              `${client.emoji.king} **Only my Owner/s can use this command**`
             ),
           ],
         });
@@ -183,7 +189,7 @@ module.exports = {
     await require(`@functions/msgCrt/executed.js`)(
       message,
       premiumUser,
-      coinRateLimitManager,
+      coinRateLimitManager
     );
   },
 };

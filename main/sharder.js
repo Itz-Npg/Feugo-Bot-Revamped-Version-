@@ -25,7 +25,7 @@ const { ClusterManager } = require("discord-hybrid-sharding");
   },
   {
     file: "./clients/bablu/kyoko.js",
-    token: YML.KYOKO.TOKEN,
+    token: "YML.KYOKO.TOKEN",
     shards: YML.KYOKO.SHARDS,
     perCluster: YML.KYOKO.PER_CLUSTER,
   },

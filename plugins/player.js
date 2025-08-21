@@ -41,8 +41,8 @@ module.exports = player = (client) => {
     [
       {
         name: "Doubiest <3j",
-        url: "node.raidenbot.xyz:5501",
-        auth: "pwd",
+        url: "in-01.glaxin.dev:8102",
+        auth: "rihanop",
         secure: false,
       },
     ],
